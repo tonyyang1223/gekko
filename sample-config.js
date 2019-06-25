@@ -19,6 +19,7 @@ config.watch = {
   exchange: 'binance',
   currency: 'USDT',
   asset: 'BTC',
+  amount : 0.01,
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

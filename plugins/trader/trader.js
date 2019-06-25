@@ -48,7 +48,12 @@ const Trader = function(next) {
 
   this.cancellingOrder = false;
   this.sendInitialPortfolio = false;
-
+  if(!config.watch.amount){
+	this.amount = 0.01;
+  }else{
+	this.amount=config.watch.amount;
+  }
+  
   setInterval(this.sync, 1000 * 60 * 10);
 }
 
@@ -223,7 +228,7 @@ Trader.prototype.processAdvice = function(advice) {
       'Selling ', this.brokerConfig.asset
     );
   }
-
+  amount= math.min(this.amount,amount);
   this.createOrder(direction, amount, advice, id);
 }
 
